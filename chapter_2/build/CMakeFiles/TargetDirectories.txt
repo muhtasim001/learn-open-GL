@@ -1,0 +1,3 @@
+/home/muhtasim/games_ws/learn_openGL/chapter_2/build/CMakeFiles/program_2.1.dir
+/home/muhtasim/games_ws/learn_openGL/chapter_2/build/CMakeFiles/edit_cache.dir
+/home/muhtasim/games_ws/learn_openGL/chapter_2/build/CMakeFiles/rebuild_cache.dir
