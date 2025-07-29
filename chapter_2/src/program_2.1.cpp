@@ -26,10 +26,7 @@ int main (void) {
     GLFWwindow * window = glfwCreateWindow(600, 600, "program 2.1", NULL, NULL);
     glfwMakeContextCurrent(window);
 
-    if (glewInit() != GLEW_OK) {
-        cout << "failed to initalize glew \n";
-        exit(EXIT_FAILURE);
-    }
+    glewInit();
 
     glfwSwapInterval(1);
     init(window);

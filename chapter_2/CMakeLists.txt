@@ -17,3 +17,7 @@ link_directories(/usr/local/lib/)
 #add the chapter programs there
 add_executable(program_2.1 src/program_2.1.cpp)
 target_link_libraries(program_2.1 PRIVATE glfw GLEW glm::glm GL)
+
+#add the chapter programs there
+add_executable(program_2.2 src/program_2.2.cpp)
+target_link_libraries(program_2.2 PRIVATE glfw GLEW glm::glm GL)
