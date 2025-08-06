@@ -1,0 +1,7 @@
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/program_2.1.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/program_2.2.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/program_2.4.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/program_2.5.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/program_2.6.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/edit_cache.dir
+/home/muta/dev/learn-open-GL/chapter_2/build/CMakeFiles/rebuild_cache.dir
