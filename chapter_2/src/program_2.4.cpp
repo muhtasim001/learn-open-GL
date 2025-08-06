@@ -1,5 +1,6 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <cstdio>
 #include <iostream>
 #include "utils.hpp"
 
@@ -10,26 +11,18 @@ using namespace std;
 GLuint renderingProgram;
 GLuint vao[numVAOs];
 
-float pSize = 1.0;
-float inc = 0.1;
-
 GLuint createShaderProgram() {
-    const char *vshaderSource = 
-        "#version 430 \n"
-        "void main(void) \n"
-        "{gl_Position=vec4(0.0, 0.0, 0.0, 1.0);}";
+    string vertShaderStr = utils::readShaderSource("shaders/vShader1.glsl");
+    string fragShaderStr = utils::readShaderSource("shaders/fShader1.glsl");
 
-    const char *fshaderSource = 
-        "#version 430 \n"
-        "out vec4 color; \n"
-        "void main (void) \n"
-        "{color=vec4(0.0, 0.0 , 1.0, 1.0);}";
+    const char *vertShaderSrc = vertShaderStr.c_str();
+    const char *fragShaderSrc = fragShaderStr.c_str();
 
     GLuint vShader = glCreateShader(GL_VERTEX_SHADER);
     GLuint fShader = glCreateShader(GL_FRAGMENT_SHADER);
 
-    glShaderSource(vShader, 1, &vshaderSource, NULL);
-    glShaderSource(fShader, 1, &fshaderSource, NULL);
+    glShaderSource(vShader, 1, &vertShaderSrc, NULL);
+    glShaderSource(fShader, 1, &fragShaderSrc, NULL);
 
     glCompileShader(vShader);
     utils::print_shader_error(utils::VERT, vShader);
@@ -54,20 +47,8 @@ void init (GLFWwindow * window) {
 }
 
 void display (GLFWwindow * window, double current_time) {
-    //screen managment
-    glClear(GL_DEPTH_BUFFER_BIT);
-    glClearColor(0.0, 0.0, 0.0, 1.0);
-    glClear(GL_COLOR_BUFFER_BIT);
-
     glUseProgram(renderingProgram);
-
-    pSize += inc;
-    if (pSize >= 30.0f)
-        inc = -0.1f;
-    else if (pSize <= 0.1f)
-        inc = 0.1f;
-
-    glPointSize(pSize);
+    glPointSize(30.0f);
     glDrawArrays(GL_POINTS, 0, 1);
 }
 
@@ -80,7 +61,7 @@ int main (void) {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
-    GLFWwindow * window = glfwCreateWindow(600, 600, "program 2.1", NULL, NULL);
+    GLFWwindow * window = glfwCreateWindow(600, 600, "program 2.4", NULL, NULL);
     glfwMakeContextCurrent(window);
 
     //don't use conditonal to instalize glew, fails on wayland
@@ -100,5 +81,3 @@ int main (void) {
     exit(EXIT_SUCCESS);
 
 }
-
-
