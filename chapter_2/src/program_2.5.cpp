@@ -47,6 +47,7 @@ void init (GLFWwindow * window) {
 }
 
 void display (GLFWwindow * window, double current_time) {
+
     glUseProgram(renderingProgram);
     //glPointSize(30.0f);
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

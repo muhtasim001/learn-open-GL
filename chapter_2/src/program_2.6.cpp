@@ -1,6 +1,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
 #include "utils.hpp"
 
@@ -13,6 +14,7 @@ GLuint vao[numVAOs];
 
 float x = 0.0f;
 float inc = 0.01f;
+double last_time = 0.0;
 
 GLuint createShaderProgram() {
     string vertShaderStr = utils::readShaderSource("shaders/vShader2.6.glsl");
@@ -59,12 +61,14 @@ void display (GLFWwindow * window, double current_time) {
 
     //glPointSize(30.0f);
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    
-    x+= inc;
+    if (abs(current_time - last_time) >= 0.016) {
+        x+= inc;
+        last_time = current_time;
+    }
     if (x > 1.0)
-        inc = -0.1f;
+        inc = -0.01f;
     if (x < -1.0f)
-        inc = 0.1f;
+        inc = 0.01f;
 
     GLuint offsetLoc = glGetUniformLocation(renderingProgram, "offset"); // get the ptr to "offset"
     glProgramUniform1f(renderingProgram, offsetLoc, x); // sends value in "x" to "offset"
