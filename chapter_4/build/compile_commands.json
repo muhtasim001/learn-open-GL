@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/muta/dev/learn-open-GL/chapter_4/build",
+  "command": "/usr/bin/c++  -I/home/muta/dev/learn-open-GL/chapter_4/include -std=c++17 -o CMakeFiles/program_2.5re.dir/src/program_2.5re.cpp.o -c /home/muta/dev/learn-open-GL/chapter_4/src/program_2.5re.cpp",
+  "file": "/home/muta/dev/learn-open-GL/chapter_4/src/program_2.5re.cpp",
+  "output": "CMakeFiles/program_2.5re.dir/src/program_2.5re.cpp.o"
+},
+{
+  "directory": "/home/muta/dev/learn-open-GL/chapter_4/build",
+  "command": "/usr/bin/c++  -I/home/muta/dev/learn-open-GL/chapter_4/include -std=c++17 -o CMakeFiles/program_2.5re.dir/include/utils.cpp.o -c /home/muta/dev/learn-open-GL/chapter_4/include/utils.cpp",
+  "file": "/home/muta/dev/learn-open-GL/chapter_4/include/utils.cpp",
+  "output": "CMakeFiles/program_2.5re.dir/include/utils.cpp.o"
+}
+]

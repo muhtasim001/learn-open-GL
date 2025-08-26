@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/program_2.5.dir/link.d CMakeFiles/program_2.5.dir/src/program_2.5.cpp.o CMakeFiles/program_2.5.dir/include/utils.cpp.o -o program_2.5   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib -lglfw -lGLEW -lGL

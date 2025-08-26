@@ -1,7 +1,5 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <cstdio>
-#include <cstdlib>
 #include <iostream>
 #include "utils.hpp"
 
@@ -18,6 +16,7 @@ double last_time = 0.0;
 
 GLuint createShaderProgram() {
     string vertShaderStr = utils::readShaderSource("shaders/vShader2.6.glsl");
+
     string fragShaderStr = utils::readShaderSource("shaders/fShader2.5.glsl");
 
     const char *vertShaderSrc = vertShaderStr.c_str();
